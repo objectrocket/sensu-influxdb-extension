@@ -10,6 +10,7 @@ GEM
       em-socksify (>= 0.3)
       eventmachine (>= 1.0.3)
       http_parser.rb (>= 0.6.0)
+      multi_json (1.12.1)
     em-socksify (0.3.0)
       eventmachine (>= 1.0.0.beta.4)
     eventmachine (1.0.3)
@@ -36,6 +37,7 @@ PLATFORMS
 
 DEPENDENCIES
   em-http-request
+  multi_json
   rake
   rspec
   sensu-em
