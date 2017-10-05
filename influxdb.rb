@@ -63,8 +63,8 @@ module Sensu::Extension
         key.gsub!('"', '\"')
         key.gsub!("\\"){ "\\\\" }
 
-        # This will merge : default conf tags < check embedded tags < sensu client/host tag
-        tags = @influx_conf['tags'].merge(event[:check][:influxdb][:tags]).merge({'host' => client})
+        # This will merge : default conf tags < check embedded tags < client tags < sensu client/host tag
+        tags = @influx_conf['tags'].merge(event[:check][:influxdb][:tags]).merge(event[:client][:tags]).merge({'host' => client})
         tags.each do |tag, val|
           key += ",#{tag}=#{val}"
         end
